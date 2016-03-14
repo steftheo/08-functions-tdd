@@ -4,7 +4,7 @@
  * @param  {Array} b
  * @return {Boolean}
  */
-sameFirst(a, b) {
+function sameFirst(a, b) {
 
 }
 
@@ -14,6 +14,6 @@ sameFirst(a, b) {
  * @param  {Array} b
  * @return {Boolean}
  */
-deepEquals(a, b) {
+function deepEquals(a, b) {
 
 }
