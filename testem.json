@@ -1,10 +1,9 @@
 {
   "framework": "qunit",
   "launch_in_ci": [
-    "PhantomJS"
+    "Chrome"
   ],
   "launch_in_dev": [
-    "PhantomJS",
     "Chrome"
   ],
   "src_files": [

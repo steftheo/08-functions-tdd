@@ -7,5 +7,18 @@
 </head>
 <body>
 
+<div class="game" id="game-tiles"></div>
+<button id="play">Play Round</button>
+
+
+<script src="/app.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+  const gameTiles = document.querySelector('#game-tiles');
+  const playBtn = document.querySelector('#play');
+
+  renderGame(gameTiles, [[false, true], [true, false]]);
+</script>
+
 </body>
 </html>

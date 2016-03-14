@@ -4,3 +4,23 @@
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 // @import 'font-awesome';
 @import 'box-sizing';
+
+.game {
+  display: flex;
+  flex-direction: column;
+
+  &__row {
+    display: flex;
+  }
+
+  &__cell {
+    width: 20px;
+    height: 20px;
+
+    border: 0.2rem #535353 solid;
+
+    &--active {
+      background: #1a479f;
+    }
+  }
+}
