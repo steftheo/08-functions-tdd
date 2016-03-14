@@ -20,6 +20,6 @@ test(`A cell knows the rules if it's dead`, function(assert) {
 
   assert.equal(a, false, `A cell does not revive`);
   assert.equal(b, false, `A cell does not revive`);
-  assert.equal(c, true, `A cell revives with a little help from its friends`);
+  assert.equal(c, true, `A cell revives with a little help from 3 of its friends`);
   assert.equal(d, false, `A cell does not revive`);
 });

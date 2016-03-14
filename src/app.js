@@ -4,11 +4,13 @@
 function createGame(x, y) {
   const grid = [];
 
-  for (var i = 0; i < x; i++) {
+  for (var row = 0; row < x; row++) {
+    debugger;
     grid.push([]);
 
-    for (var z = 0; z < y; z++) {
-      grid[i].push(false);
+    for (var cell = 0; cell < y; cell++) {
+      debugger;
+      grid[row].push(false);
     }
   }
 
