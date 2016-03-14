@@ -1,3 +1,0 @@
-function shouldHit(cardOne, cardTwo) {
-
-}
