@@ -77,13 +77,15 @@ function runGame(game) {
 function renderGame(el, game) {
   clearElement(el);
 
-  game.forEach(function(row) {
+  game.forEach(function(row, x) {
     const rowEl = document.createElement('div');
     rowEl.classList.add('game__row');
 
-    row.forEach(function(cell) {
+    row.forEach(function(cell, y) {
       const cellEl = document.createElement('div');
       cellEl.classList.add('game__cell');
+      cellEl.dataset.x = x;
+      cellEl.dataset.y = y;
 
       if (cell) {
         cellEl.classList.add('game__cell--active');
@@ -97,13 +99,18 @@ function renderGame(el, game) {
 }
 
 function startGame(gridEl, playEl) {
-  let game = createGame(10, 10);
-  game = [[false, false, true], [false, true, false], [true, false, false]];
+  let game = createGame(20, 20);
 
   renderGame(gridEl, game);
 
   playEl.addEventListener('click', function() {
     game = runGame(game);
+
+    renderGame(gridEl, game);
+  });
+
+  gridEl.addEventListener('click', function(ev) {
+    game = flipTile(game, ev.target.dataset.x, ev.target.dataset.y);
 
     renderGame(gridEl, game);
   });
