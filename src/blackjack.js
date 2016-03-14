@@ -4,7 +4,31 @@
  * @return {Number}
  */
 function cardValue(cardName) {
+  if (cardName === 'ace') {
+    return 11;
+  }
 
+  if (cardName === 'five') {
+    return 5;
+  }
+
+  if (cardName === 'nine') {
+    return 9;
+  }
+  if (cardName === 'ten') {
+    return 10;
+  }
+  if (cardName === 'jack') {
+    return 10;
+  }
+  if (cardName === 'queen') {
+    return 10;
+  }
+  if (cardName === 'king') {
+    return 10;
+  }
+
+  else {return parseInt(cardName, 10)};
 }
 
 /**
@@ -14,6 +38,7 @@ function cardValue(cardName) {
  * @return {Number}
  */
 function sum(a, b) {
+
 
 }
 
