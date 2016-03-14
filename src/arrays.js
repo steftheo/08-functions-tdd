@@ -5,7 +5,7 @@
  * @return {Boolean}
  */
 function sameFirst(a, b) {
-
+  return a[0] === b[0];
 }
 
 /**
@@ -15,8 +15,20 @@ function sameFirst(a, b) {
  * @return {Boolean}
  */
 function deepEquals(a, b) {
+  for (var i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) {
+      return false;
+    }
+  }
 
+  for (var j = 0; j < b.length; j++) {
+    if (a[j] !== b[j]) {
+      return false;
+      }
+  }
+  return true;
 }
+
 
 function arraySum(arr) {
   var sum = 0;
