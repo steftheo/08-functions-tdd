@@ -28,3 +28,10 @@ test(`A tile can be flipped`, function(assert) {
   assert.notEqual(a, [[true, false], [true, false]], 'The array should not be modified');
   assert.deepEqual(flipTile(b, 0, 0), [[true, false], [false, false]]);
 });
+
+test(`It knows how to find its neighbors`, function(assert) {
+  const arr = [[false, false, true], [false, true, false], [true, false, false]];
+
+  assert.deepEqual(getNeighbors(arr, 0, 0), [undefined, undefined, undefined, undefined, false, undefined, false, true]);
+  assert.deepEqual(getNeighbors(arr, 1, 1), [false, false, true, false, false, true, false, false]);
+});

@@ -30,6 +30,28 @@ function clearElement(el) {
   }
 }
 
+function getNeighbors(game, x, y) {
+  const neighbors = [];
+
+  for (var i = x - 1; i <= x + 1; i++) {
+    for (var j = y - 1; j <= y + 1; j++) {
+      if (x !== i || j !== y) {
+        if (game[i]) {
+          neighbors.push(game[i][j]);
+        } else {
+          neighbors.push(undefined);
+        }
+      }
+    }
+  }
+
+  return neighbors;
+}
+
+function runGame(game) {
+
+}
+
 function renderGame(el, game) {
   clearElement(game);
 
@@ -53,5 +75,11 @@ function renderGame(el, game) {
 }
 
 function startGame(gridEl, playEl) {
+  let game = createGame(10, 10);
 
+  renderGame(gridEl, game);
+
+  playEl.addEventListener('click', function() {
+
+  });
 }
