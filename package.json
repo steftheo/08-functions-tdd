@@ -4,7 +4,7 @@
   "description": "",
   "main": "public/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/testem",
     "serve": "./node_modules/.bin/broccoli-lr serve",
     "build": "./node_modules/.bin/broccoli build dist",
     "lint": "./node_modules/.bin/sass-lint"
