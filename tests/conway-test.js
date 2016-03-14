@@ -23,11 +23,3 @@ test(`A cell knows the rules if it's dead`, function(assert) {
   assert.equal(c, false, `A cell revives with a little help from its friends`);
   assert.equal(d, false, `A cell does not revive`);
 });
-
-test(`A game can be created`, function(assert) {
-  const a = createGame(1, 1);
-  const b = createGame(5, 2);
-
-  assert.deepEqual(a, [[false]]);
-  assert.deepEqual(b, [[false, false], [false, false], [false, false], [false, false], [false, false]]);
-})
