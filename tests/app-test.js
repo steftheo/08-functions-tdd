@@ -35,3 +35,9 @@ test(`It knows how to find its neighbors`, function(assert) {
   assert.deepEqual(getNeighbors(arr, 0, 0), [undefined, undefined, undefined, undefined, false, undefined, false, true]);
   assert.deepEqual(getNeighbors(arr, 1, 1), [false, false, true, false, false, true, false, false]);
 });
+
+test(`It knows how to run a game`, function(assert) {
+  const arr = [[false, false, true], [false, true, false], [true, false, false]];
+
+  assert.deepEqual(runGame(arr), [[false, false, false], [false, true, false], [false, false, false]])
+});

@@ -1,3 +1,5 @@
+'use strict';
+
 // Don't go beyond this point
 function createGame(x, y) {
   const grid = [];
@@ -49,11 +51,31 @@ function getNeighbors(game, x, y) {
 }
 
 function runGame(game) {
+  const newGame = [];
 
+  for (var x = 0; x < game.length; x++) {
+    const row = game[x];
+    const newRow = [];
+
+    for (var y = 0; y < row.length; y++) {
+      const cell = row[y];
+      const neighbors = getNeighbors(game, x, y);
+
+      if (cell) {
+        newRow.push(aliveEh(neighbors));
+      } else {
+        newRow.push(reviveEh(neighbors));
+      }
+    }
+
+    newGame.push(newRow);
+  }
+
+  return newGame;
 }
 
 function renderGame(el, game) {
-  clearElement(game);
+  clearElement(el);
 
   game.forEach(function(row) {
     const rowEl = document.createElement('div');
@@ -76,10 +98,13 @@ function renderGame(el, game) {
 
 function startGame(gridEl, playEl) {
   let game = createGame(10, 10);
+  game = [[false, false, true], [false, true, false], [true, false, false]];
 
   renderGame(gridEl, game);
 
   playEl.addEventListener('click', function() {
+    game = runGame(game);
 
+    renderGame(gridEl, game);
   });
 }

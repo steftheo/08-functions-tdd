@@ -16,14 +16,14 @@ const stylePaths = [
 
 const styles = new Sass(stylePaths, 'app.scss', 'app.css', {});
 
-const appScript = Babel('src', {
+const babelScript = Babel('src', {
   browserPolyfill: true,
   stage: 0,
   // moduleIds: true,
   // modules: 'amd',
 });
 
-appScript = Concat(appScript, {
+const appScript = Concat(babelScript, {
   inputFiles: [
     '**/*.js',
   ],
