@@ -38,7 +38,7 @@ function cardValue(cardName) {
  * @return {Number}
  */
 function sum(a, b) {
-
+  return a + b;
 
 }
 
@@ -49,6 +49,10 @@ function sum(a, b) {
  * @return {Boolean}
  */
 function shouldSplit(cardOne, cardTwo) {
+  if (cardOne === cardTwo) {
+    return true;
+  }
+  return false;
 
 }
 
@@ -59,7 +63,10 @@ function shouldSplit(cardOne, cardTwo) {
  * @return {Boolean}
  */
 function shouldHit(cardOne, cardTwo) {
-
+  if (cardOne <= cardTwo) {
+    return false;
+  }
+    return cardOne !== cardTwo;
 }
 
 /**
@@ -69,5 +76,10 @@ function shouldHit(cardOne, cardTwo) {
  * @return {String}
  */
 function selectAction(cardOne, cardTwo) {
+  if (`ace` + `five`) {
+    return `hit`;
+  }
+
+
 
 }
