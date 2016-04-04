@@ -7,17 +7,6 @@ function cardValue(cardName) {
   if (cardName === 'ace') {
     return 11;
   }
-
-  if (cardName === 'five') {
-    return 5;
-  }
-
-  if (cardName === 'nine') {
-    return 9;
-  }
-  if (cardName === 'ten') {
-    return 10;
-  }
   if (cardName === 'jack') {
     return 10;
   }
@@ -28,7 +17,7 @@ function cardValue(cardName) {
     return 10;
   }
 
-  else {return parseInt(cardName, 10)};
+  return parseInt(cardName, 10);
 }
 
 /**
@@ -63,10 +52,11 @@ function shouldSplit(cardOne, cardTwo) {
  * @return {Boolean}
  */
 function shouldHit(cardOne, cardTwo) {
-  if (cardOne <= cardTwo) {
+  if (shouldSplit(cardOne, cardTwo)) {
     return false;
   }
-    return cardOne !== cardTwo;
+
+  return sum(cardValue(cardOne), cardValue(cardTwo)) < 17;
 }
 
 /**
@@ -76,10 +66,13 @@ function shouldHit(cardOne, cardTwo) {
  * @return {String}
  */
 function selectAction(cardOne, cardTwo) {
-  if (`ace` + `five`) {
-    return `hit`;
+  if (shouldSplit(cardOne, cardTwo)) {
+    return `split`;
   }
 
-
+  if (shouldHit(cardOne, cardTwo)) {
+    return `hit`
+  }
+  return `stay`
 
 }

@@ -1,7 +1,13 @@
 'use strict';
 
 function aliveNeighbors(neighbors) {
+  return neighbors.reduce((snowball, current) => {
+    if (current) {
+      return snowball + 1;
+    }
+    return snowball;
 
+  }, 0);
 }
 
 
@@ -11,7 +17,11 @@ function aliveNeighbors(neighbors) {
  * @return {Boolean}
  */
 function aliveEh(neighbors) {
+  if (aliveNeighbors(neighbors) === 2 || aliveNeighbors(neighbors) === 3) {
+    return true;
+  }
 
+  return false;
 }
 
 /**
@@ -20,5 +30,9 @@ function aliveEh(neighbors) {
  * @return {Boolean}
  */
 function reviveEh(neighbors) {
+  if (aliveNeighbors(neighbors) === 3) {
+    return true;
+  }
 
+  return false;
 }
